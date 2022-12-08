@@ -1,4 +1,3 @@
-import React from "react";
 import {Avatar, Grid, Typography} from "@mui/material";
 import {USER_NAME} from "../constants/constants";
 

@@ -1,5 +1,4 @@
 import {Button, Container, Grid, TextField,} from "@mui/material";
-import React from "react";
 import Message from "./Message";
 import useChatLogic from "../hooks/useChatLogic";
 

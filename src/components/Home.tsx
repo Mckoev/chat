@@ -1,4 +1,3 @@
-import React from 'react';
 import NavBar from "./NavBar";
 import Chat from "./Chat";
 import {Grid} from "@mui/material";

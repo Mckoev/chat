@@ -1,6 +1,5 @@
 import {CHAT, USER_NAME} from "../constants/constants";
 import React, {useEffect, useRef, useState} from "react";
-import {useNavigate} from "react-router-dom";
 
 interface IMessage {
     author: string
@@ -12,7 +11,6 @@ interface IMessage {
 const initialMessage = [{author: "TEST", hours: 0, minutes: 0, text: "test message"}]
 
 const useChatLogic = () => {
-    const navigate = useNavigate();
     const login = sessionStorage.getItem(USER_NAME)
 
     const [textMessage, setTextMessage] = useState("");
@@ -61,7 +59,7 @@ const useChatLogic = () => {
     };
     useEffect(scrollToBottom, [messages]);
 
-    onstorage = (event) => {
+    onstorage = () => {
         const locValue = localStorage.getItem(CHAT)
         if (typeof locValue === 'string') {                               // For Typescript
             setMessages(JSON.parse(locValue))
