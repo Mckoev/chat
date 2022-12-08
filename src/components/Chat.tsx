@@ -1,6 +1,6 @@
 import {Button, Container, Grid, TextField,} from "@mui/material";
 import Message from "./Message";
-import useChatLogic from "../hooks/useChatLogic";
+import useChatLogic from "hooks/useChatLogic";
 
 
 const Chat = () => {
@@ -33,7 +33,6 @@ const Chat = () => {
                     sx={{
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
                         marginTop: "5px",
                         borderRadius: "5px",
                         overflow: "auto",
@@ -56,7 +55,6 @@ const Chat = () => {
                                 key={key}
                                 author={item?.author}
                                 text={item?.text}
-                                name={login}
                                 hours={item?.hours}
                                 minutes={item?.minutes}
                             />
@@ -94,9 +92,7 @@ const Chat = () => {
                         variant="outlined"
                         color="secondary"
                         size="large"
-                        onClick={() => {
-                            sendMessage();
-                        }}
+                        onClick={() => sendMessage()}
                     >
                         Send
                     </Button>

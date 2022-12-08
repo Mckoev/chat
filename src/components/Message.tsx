@@ -1,32 +1,19 @@
 import {Avatar, Grid, Typography} from "@mui/material";
-import {USER_NAME} from "../constants/constants";
+import {USER_NAME} from "constants/constants";
 
 type Props = {
     author: string;
     text: string;
-    name: string | null;
     hours: number;
     minutes: number;
 };
 
-const Message = (props: Props) => {
+const Message = ({author, text, hours, minutes}: Props) => {
 
     const login = sessionStorage.getItem(USER_NAME)
 
-    function getFlex(author: string) {
-        return (author === login) ? 'flex' : ''
-    }
-
-    function getFlexEnd(author: string) {
-        return (author === login) ? 'flex-end' : ''
-    }
-
-    function getJustifyContent(author: string) {
-        return (author === login) ? 'flex-end' : ''
-    }
-
-    function getColor(author: string) {
-        return (author === login) ? 'lightgreen' : 'white'
+    function getAuthorValue(author: string, authorValue: string, anotherValue = '') {
+        return (author === login) ? authorValue : anotherValue
     }
 
     return (
@@ -44,14 +31,14 @@ const Message = (props: Props) => {
                     container
                     sx={{
                         display: "flex",
-                        justifyContent: getJustifyContent(props.author),
+                        justifyContent: getAuthorValue(author, 'flex-end'),
                         backgroundColor: "background.primary",
                         borderRadius: "0 5px 5px 5px",
                         marginLeft: "10px",
                         width: "100%"
                     }}
                 >
-                    {(props.author !== login) && <Grid
+                    {(author !== login) && <Grid
                         sx={{
                             display: "flex",
                             flexDirection: "column",
@@ -59,7 +46,7 @@ const Message = (props: Props) => {
                         }}>
                         <Avatar/>
                         <Typography>
-                            {props.author}
+                            {author}
                         </Typography>
                     </Grid>}
                     <Typography
@@ -69,22 +56,22 @@ const Message = (props: Props) => {
                         noWrap={false}
                         sx={{
                             wordBreak: "break-all",
-                            backgroundColor: getColor(props.author),
+                            backgroundColor: getAuthorValue(author, "lightgreen", 'white'),
                             margin: '5px',
                             borderRadius: '10px',
                             fontSize: "16px"
                         }}
                         component="div"
                     >
-                        {props.text}
+                        {text}
                         <Typography
                             sx={{fontSize: "12px",
-                            display: getFlex(props.author),
-                            justifyContent: getFlexEnd(props.author)}}>
-                            {props.hours}: {props.minutes}
+                            display: getAuthorValue(author, "flex"),
+                            justifyContent: getAuthorValue(author, 'flex-end')}}>
+                            {hours}: {minutes}
                         </Typography>
                     </Typography>
-                    {(props.author === login) && <Typography
+                    {(author === login) && <Typography
                         sx={{
                             display: "flex",
                             alignItems: "center",

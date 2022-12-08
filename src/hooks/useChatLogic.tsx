@@ -1,4 +1,4 @@
-import {CHAT, USER_NAME} from "../constants/constants";
+import {CHAT, USER_NAME} from "constants/constants";
 import React, {useEffect, useRef, useState} from "react";
 
 interface IMessage {
