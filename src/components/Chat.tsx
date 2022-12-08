@@ -9,7 +9,6 @@ const Chat = () => {
         messages,
         textMessage,
         setTextMessage,
-        login,
         sendMessage,
         messagesEndRef,
         onKeyDown,
@@ -22,8 +21,8 @@ const Chat = () => {
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
-                width={"100%"}
-                height={"90vh"}
+                width="100%"
+                height="90vh"
                 sx={{
                     backgroundColor: "lightGreen",
                 }}
@@ -72,9 +71,9 @@ const Chat = () => {
                     direction="row"
                     justifyContent="space-evenly"
                     alignItems="center"
-                    width={"100%"}
-                    maxWidth={"1000px"}
-                    height={"100px"}
+                    width="100%"
+                    maxWidth="1000px"
+                    height="100px"
                 >
                     <TextField
                         focused
@@ -92,7 +91,7 @@ const Chat = () => {
                         variant="outlined"
                         color="secondary"
                         size="large"
-                        onClick={() => sendMessage()}
+                        onClick={sendMessage}
                     >
                         Send
                     </Button>
