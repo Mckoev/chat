@@ -24,7 +24,7 @@ const Chat = () => {
                 width="100%"
                 height="90vh"
                 sx={{
-                    backgroundColor: "lightGreen",
+                    backgroundColor: "secondary.light",
                 }}
             >
                 <Grid
@@ -35,7 +35,7 @@ const Chat = () => {
                         marginTop: "5px",
                         borderRadius: "5px",
                         overflow: "auto",
-                        backgroundColor: "#fff3e0",
+                        backgroundColor: "primary.light",
                         width: "100%",
                         maxWidth: "1000px",
                         padding: "10px"

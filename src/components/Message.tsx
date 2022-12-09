@@ -32,10 +32,9 @@ const Message = ({author, text, hours, minutes}: Props) => {
                     sx={{
                         display: "flex",
                         justifyContent: getAuthorValue(author, 'flex-end'),
-                        backgroundColor: "background.primary",
-                        borderRadius: "0 5px 5px 5px",
+                        alignItems: "center",
                         marginLeft: "10px",
-                        width: "100%"
+                        width: "100%",
                     }}
                 >
                     {(author !== login) && <Grid
@@ -50,13 +49,12 @@ const Message = ({author, text, hours, minutes}: Props) => {
                         </Typography>
                     </Grid>}
                     <Typography
-                        color="text.primary"
-                        padding={"10px"}
+                        padding="10px"
                         fontSize="12px"
                         noWrap={false}
                         sx={{
                             wordBreak: "break-all",
-                            backgroundColor: getAuthorValue(author, "lightgreen", 'white'),
+                            backgroundColor: getAuthorValue(author, "secondary.main", 'white'),
                             margin: '5px',
                             borderRadius: '10px',
                             fontSize: "16px"

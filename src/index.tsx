@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+import {createHashRouter, RouterProvider,} from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {blue, green} from "@mui/material/colors";
+import {blue, green, orange} from "@mui/material/colors";
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Login/>,
@@ -28,8 +28,14 @@ const router = createBrowserRouter([
 
 const theme = createTheme({
     palette: {
-        primary: blue,
-        secondary: green
+        primary: {
+            main: '#1e88e5',
+            light: '#fff3e0'
+        },
+        secondary: {
+            main: '#90ee90',
+            light: "#9ad29c"
+        },
     },
 });
 
